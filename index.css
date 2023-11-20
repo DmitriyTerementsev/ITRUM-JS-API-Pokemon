@@ -1,0 +1,40 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  margin: 50px auto;
+}
+
+.pokemon {
+  width: 250px;
+  height: 250px;
+}
+
+.pokemon__name {
+  max-width: 250px;
+  color: #000000;
+}
+
+.button {
+  height: 100px;
+  width: 150px;
+  border-radius: 15px;
+  appearance: none;
+  border: 0;
+  background-color: #444444;
+  margin-top: 10px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.input {
+  height: 50px;
+  background-color: #ffff55;
+}
+
+.buttons {
+  display: flex;
+  gap: 30px;
+}
