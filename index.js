@@ -7,7 +7,7 @@ const searchId = document.querySelector('.input_number');
 const findButton = document.querySelector('.button_find');
 
 let namePokemon = '';
-let idPokemon = Math.floor(Math.random() * 1292)
+let idPokemon = Math.floor(Math.random() * 1292);
 
 nextButton.addEventListener('click', () => {
   idPokemon = parseInt(idPokemon) + 1;
@@ -58,10 +58,10 @@ function findById(id) {
     .catch((res) => console.log(res));
 }
 
-function findRandom(){
-  console.log(idPokemon)
+function findRandom() {
+  console.log(idPokemon);
   fetch(`https://pokeapi.co/api/v2/pokemon/${idPokemon}`)
-  .then((res) => res.json())
+    .then((res) => res.json())
     .then((res) => {
       console.log(res);
       pokemonImage.src = res.sprites.front_default;
@@ -70,7 +70,7 @@ function findRandom(){
     .catch((res) => console.log(res));
 }
 
-window.onload = findRandom()
+window.onload = findRandom();
 
 function resetInputs() {
   searchName.value = '';
