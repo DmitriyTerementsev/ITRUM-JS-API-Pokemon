@@ -5,6 +5,7 @@ const prevButton = document.querySelector('.button_prev');
 const searchName = document.querySelector('.input_text');
 const searchId = document.querySelector('.input_number');
 const findButton = document.querySelector('.button_find');
+const form = document.querySelector('.form')
 
 let namePokemon = '';
 let idPokemon = Math.floor(Math.random() * 1292);
@@ -21,15 +22,16 @@ prevButton.addEventListener('click', () => {
   findById(idPokemon);
 });
 
-findButton.addEventListener('click', () => {
-  if (searchName.value !== '') {
+form.addEventListener('submit', (evt) => {
+  evt.preventDefault()
+  if (searchName.value == String) {
     namePokemon = searchName.value;
     console.log(searchName.value);
     findByName(namePokemon);
     resetInputs();
   } else {
-    idPokemon = searchId.value;
-    console.log(searchId.value);
+    idPokemon = searchName.value;
+    console.log(searchName.value);
     findById(idPokemon);
     resetInputs();
   }
@@ -74,5 +76,4 @@ window.onload = findRandom();
 
 function resetInputs() {
   searchName.value = '';
-  searchId.value = '';
 }
